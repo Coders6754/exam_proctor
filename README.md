@@ -1,91 +1,130 @@
 # Exam Invigilation App
 
-A complete application for remote exam invigilation, allowing proctors to monitor students and verify IDs during online exams.
+A real-time exam proctoring system that enables educators to monitor students during online examinations through secure video surveillance and behavioral analysis.
 
-## Overview
+<img width="947" alt="exam" src="https://github.com/user-attachments/assets/abe3b11a-a6d4-4073-9f3f-86523968a54e" />
 
-The Exam Invigilation App is built using the MERN stack (MongoDB, Express, React, Node.js) with Bootstrap for CSS styling. It enables secure remote exam proctoring with features like webcam monitoring, ID verification, and suspicious activity reporting.
+## Live Demo
 
-## Features
+- Frontend: [https://exam-invigilation-app-frontend-qt5cnxtor.vercel.app](https://exam-invigilation-app-frontend-qt5cnxtor.vercel.app)
+- Backend: [https://exam-invigilation-app-backend-msdl95eg7.vercel.app](https://exam-invigilation-app-backend-msdl95eg7.vercel.app)
 
-- **User Authentication**: Secure registration and login with role-based access control
-- **Real-time Monitoring**: Live video monitoring of students during exams
-- **ID Verification**: Tools for proctors to verify student identities
-- **Incident Reporting**: System for proctors to flag suspicious activities
-- **Exam Management**: Create, schedule, and manage online exams
-- **User Management**: Assign proctors and register students for exams
+## About the Project
 
-## Project Structure
+The Exam Invigilation App is a comprehensive solution designed to address the challenges of remote examination integrity. With the rise of online education, ensuring academic honesty during examinations has become increasingly difficult. This application bridges that gap by providing real-time monitoring capabilities while maintaining a user-friendly experience for both proctors and students.
 
-The project is divided into two main parts:
+### Key Features
 
-- `backend/` - Node.js Express server with MongoDB integration
-- `frontend/` - React application with Bootstrap styling
+- **Real-time Video Monitoring**: Proctors can simultaneously monitor multiple students via live video feeds
+- **Automatic Suspicious Activity Detection**: System flags potential irregularities like absence, multiple faces, or unusual movements
+- **Secure Authentication**: Role-based access control for students, proctors, and administrators
+- **ID Verification**: Built-in mechanism for student identity verification before exam commencement
+- **Incident Reporting**: Streamlined process for documenting and managing suspicious activities
+- **Responsive Design**: Fully functional across desktop and mobile devices
+- **Reliable Socket Connection**: WebSocket implementation with automatic reconnection handling
 
-## Setup Instructions
+## Technology Stack
+
+### Frontend
+- **React.js**: Component-based UI development
+- **React Router**: Navigation and routing
+- **Socket.io Client**: Real-time bidirectional communication
+- **Axios**: HTTP requests and API integration
+- **Material-UI**: Modern, responsive UI components
+- **WebRTC**: Browser-based real-time communication for video streaming
+
+### Backend
+- **Node.js**: JavaScript runtime for the server
+- **Express.js**: Web application framework
+- **MongoDB**: NoSQL database for flexible data storage
+- **Mongoose**: MongoDB object modeling
+- **Socket.io**: Real-time event-based communication
+- **JWT**: Secure authentication and authorization
+- **Bcrypt**: Password hashing and security
+
+### Deployment
+- **Vercel**: Frontend and backend hosting
+- **MongoDB Atlas**: Cloud database hosting
+
+## Installation and Setup
 
 ### Prerequisites
-
-- Node.js (v14+ recommended)
-- MongoDB (local or Atlas)
-- npm or yarn
+- Node.js (v14.x or higher)
+- npm (v6.x or higher)
+- MongoDB (local or Atlas connection)
 
 ### Backend Setup
+```bash
+# Clone the repository
+git clone https://github.com/your-username/exam-invigilation-app.git
 
-1. Navigate to the backend directory:
-   ```
-   cd backend
-   ```
+# Navigate to backend directory
+cd exam-invigilation-app/backend
 
-2. Install dependencies:
-   ```
-   npm install
-   ```
+# Install dependencies
+npm install
 
-3. Create a `.env` file with the following environment variables:
-   ```
-   MONGODB_URI=<your-mongodb-connection-string>
-   PORT=5000
-   JWT_SECRET=<your-secret-key>
-   JWT_EXPIRE=30d
-   ```
+# Create .env file
+touch .env
 
-4. Start the server:
-   ```
-   npm run dev
-   ```
+# Add environment variables to .env
+MONGODB_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+
+# Start the server
+npm run dev
+```
 
 ### Frontend Setup
+```bash
+# Navigate to frontend directory
+cd ../frontend
 
-1. Navigate to the frontend directory:
-   ```
-   cd frontend
-   ```
+# Install dependencies
+npm install
 
-2. Install dependencies:
-   ```
-   npm install
-   ```
+# Create .env file
+touch .env
 
-3. Start the React development server:
-   ```
-   npm start
-   ```
+# Add environment variables to .env
+REACT_APP_API_URL=http://localhost:5000
+REACT_APP_SOCKET_URL=http://localhost:5000
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+# Start the development server
+npm start
+```
 
-## API Endpoints
+## Usage Guide
 
-See the [backend README](backend/README.md) for detailed API documentation.
+### Administrator
+1. Register an admin account
+2. Create and manage exams
+3. Assign proctors to exams
+4. Review incident reports
 
-## Testing with Postman
+### Proctor
+1. Log in with proctor credentials
+2. Select an assigned exam to monitor
+3. View student video feeds
+4. Request ID verification
+5. Report suspicious activities
 
-1. Import the provided collection (or create one from the API endpoints)
-2. Set up environment variables:
-   - `URL`: http://localhost:5000
-   - `TOKEN`: (will be set after login)
-3. Run the endpoints in sequence to test functionality
+### Student
+1. Log in with student credentials
+2. Join the assigned exam
+3. Complete identity verification
+4. Take the exam while being monitored
+5. Submit the exam when finished
 
 ## License
 
-This project is licensed under the MIT License. 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Contributors
+
+- [Your Name](https://github.com/your-username)
+
+## Acknowledgments
+
+- Special thanks to all educators adapting to remote learning challenges
+- Inspired by the need for academic integrity in online education 
